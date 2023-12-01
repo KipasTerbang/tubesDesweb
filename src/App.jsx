@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import { Home } from "./pages";
+import { Popular, Upcoming } from "./pages/Movie";
+import { PopularTv } from "./pages/Tv";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,6 +15,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/movie/popular" element={<Popular />} />
+          <Route path="/movie/upcoming" element={<Upcoming />} />
+          <Route path="/tv/popular-tv" element={<PopularTv />} />
         </Routes>
         <Footer />
         <ToastContainer

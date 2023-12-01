@@ -56,8 +56,8 @@ const Navbar = () => {
                     className="bg-white w-40 h-fit text-black font-normal flex flex-col items-start justify-start gap-2 absolute top-9 z-50 py-4 px-6 rounded"
                     onMouseLeave={() => setSelectedCategory(null)}
                   >
-                    <Link to="/">Popular</Link>
-                    <Link to="/">Upcoming</Link>
+                    <Link to="/movie/popular">Popular</Link>
+                    <Link to="/movie/upcoming">Upcoming</Link>
                   </ul>
                 )}
               </li>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     className="bg-white w-40 h-fit text-black font-normal flex flex-col items-start justify-start gap-2 absolute top-9 z-50 py-4 px-6 rounded"
                     onMouseLeave={() => setSelectedCategory(null)}
                   >
-                    <Link to="/">Popular</Link>
+                    <Link to="/tv/popular-tv">Popular</Link>
                   </ul>
                 )}
               </li>
@@ -105,8 +105,8 @@ const Navbar = () => {
                           className="bg-blue w-full h-fit text-white font-normal flex flex-col items-start justify-start gap-2 z-50"
                           onClick={() => setToggle(false)}
                         >
-                          <Link to="/">Popular</Link>
-                          <Link to="/">Upcoming</Link>
+                          <Link to="/movie/popular">Popular</Link>
+                          <Link to="/movie/upcoming">Upcoming</Link>
                         </ul>
                       )}
                     </li>
@@ -122,7 +122,7 @@ const Navbar = () => {
                           className="bg-blue w-full h-fit text-white font-normal flex flex-col items-start justify-start gap-2 z-50"
                           onClick={() => setToggle(false)}
                         >
-                          <Link to="/">Popular</Link>
+                          <Link to="/tv/popular-tv">Popular</Link>
                         </ul>
                       )}
                     </li>
