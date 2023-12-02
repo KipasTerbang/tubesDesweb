@@ -14,7 +14,7 @@ const TrendingMovie = () => {
     setTime(tab);
   };
 
-  const skeleton = () => {
+  const Skeleton = () => {
     return (
       <main className="w-36 sm:w-40 h-60  animate-pulse flex flex-col items-center justify-center gap-2">
         <div className="w-full h-full bg-skeleton rounded " />
@@ -37,7 +37,7 @@ const TrendingMovie = () => {
             <TabSwitch onTabChange={handleTabChange} />
           </section>
           {!isFetching ? (
-            <main className="flex flex-row gap-5 overflow-x-scroll">
+            <main className="flex flex-row gap-5">
               {Trendings?.results?.map((Media) => (
                 <div key={Media.id}>
                   <MovieCard Media={Media} />
@@ -45,18 +45,18 @@ const TrendingMovie = () => {
               ))}
             </main>
           ) : (
-            <div className="w-full h-60 gap-2 flex flex-wrap overflow-y-hidden overflow-x-scroll">
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
+            <div className="w-full h-60 gap-2 flex flex-wrap overflow-y-hidden">
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
             </div>
           )}
         </div>

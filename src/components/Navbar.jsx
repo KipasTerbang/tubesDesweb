@@ -43,7 +43,7 @@ const Navbar = () => {
           <section className="w-full flex items-center justify-start gap-10 sm:gap-14">
             <section className="font-bold text-2xl flex items-center gap-2">
               <BiMoviePlay className="bg-blue-100 p-[6px] rounded-full text-4xl" />
-              <Link to="/">Finding Movie</Link>
+              <Link to="/">Finding Movies</Link>
             </section>
             <ul className="hidden sm:flex items-center justify-center gap-5 sm:gap-10 font-semibold text-lg">
               <li
@@ -139,13 +139,13 @@ const Navbar = () => {
           </section>
 
           <section className="hidden sm:flex items-center justify-center gap-5">
-            <Link to="/">
+            {/* <Link to="/">
               <MdFavoriteBorder
                 className={`w-6 h-6 font-semibold cursor-pointer ${
                   contents.length > 0 ? "text-red-500" : ""
                 }`}
               />
-            </Link>
+            </Link> */}
             <div className="relative hidden md:block">
               {search ? (
                 <section className="flex items-center gap-2">

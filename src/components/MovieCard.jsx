@@ -6,7 +6,6 @@ import CircleRating from "./CircleRating";
 import LazyImg from "./LazyImg";
 import poster from "../assets/poster.jpg";
 
-
 const MovieCard = ({ Media }) => {
   const navigate = useNavigate();
   const formatDate = (dateStr) => {
@@ -22,13 +21,15 @@ const MovieCard = ({ Media }) => {
       smooth: true,
     });
     if (Media.media_type) {
-      navigate(`/${Media.media_type}/${Media.id}`);
+      navigate(`/movie/${Media.id}`);
     } else {
-      navigate(`/${Media?.first_air_date ? "tv" : "movie"}/${Media.id}`);
+      navigate(`/`);
     }
   };
 
-  const imgUrl = Media?.poster_path ? `https://image.tmdb.org/t/p/original${Media.poster_path}` : poster
+  const imgUrl = Media?.poster_path
+    ? `https://image.tmdb.org/t/p/original${Media.poster_path}`
+    : poster;
 
   return (
     <>

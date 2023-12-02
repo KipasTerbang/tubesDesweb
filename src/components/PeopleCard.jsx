@@ -31,7 +31,6 @@ const PeopleCard = ({ person }) => {
             alt="Poster"
             className="w-full h-full object-center object-cover rounded"
           />
-          {/* <CircleRating rating={Media.vote_average.toFixed(1)}/> */}
         </section>
         <section className="flex flex-col items-start justify-start gap-1">
           <h1 className="font-semibold ">{person.name}</h1>

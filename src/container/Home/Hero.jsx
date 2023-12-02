@@ -6,7 +6,7 @@ import ContentWrapper from "../../Hoc/SectionWrapper";
 
 const Hero = () => {
   const navigate = useNavigate();
-  const [query, setQuery] = useState("");
+  const [query, SetQuery] = useState("");
 
   const { data: movies, isFetching, error } = useGetMovieQuery();
 
@@ -15,7 +15,7 @@ const Hero = () => {
 
   if (error) return "Something went wrong";
 
-  const searchQueryHandler = (e) => {
+  const SearchQueryHandler = (e) => {
     e.preventDefault();
     if (e.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
@@ -29,7 +29,7 @@ const Hero = () => {
     }
   };
 
-  const skeleton = () => {
+  const Skeleton = () => {
     return (
       <main className="w-full h-[450px] md:h-[500px] bg-skeleton animate-pulse flex-shrink-0 overflow-hidden">
         <section className="h-full w-full bg-[#3f3f3f]">
@@ -69,8 +69,8 @@ const Hero = () => {
                     type="text"
                     placeholder="Search for a movie, tv show, person...."
                     className="w-full h-12 sm:h-14 bg-white outline-none border-none rounded-3xl px-5 text-gray-400 text-base sm:text-lg"
-                    onChange={(e) => setQuery(e.target.value)}
-                    onKeyUp={searchQueryHandler}
+                    onChange={(e) => SetQuery(e.target.value)}
+                    onKeyUp={SearchQueryHandler}
                   />
                   <button
                     className="w-20 sm:w-36 h-12 sm:h-14 bg-blue absolute -right-5 sm:right-0 rounded-3xl font-medium text-base sm:text-lg "
@@ -83,7 +83,7 @@ const Hero = () => {
             </ContentWrapper>
           </>
         ) : (
-          <div>{skeleton()}</div>
+          <div>{Skeleton()}</div>
         )}
       </header>
     </>

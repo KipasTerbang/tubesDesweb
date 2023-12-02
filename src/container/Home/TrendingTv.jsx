@@ -13,7 +13,7 @@ const TrendingTv = () => {
     setTime(tab);
   };
 
-  const skeleton = () => {
+  const Skeleton = () => {
     return (
       <main className="w-36 sm:w-40 h-60  animate-pulse flex flex-col items-center justify-center gap-2">
         <div className="w-full h-full bg-skeleton rounded " />
@@ -32,13 +32,11 @@ const TrendingTv = () => {
       <ContentWrapper>
         <div className="w-full h-full py-10 flex flex-col gap-10">
           <section className="w-full flex items-center gap-10">
-            <h1 className="textheader">
-              Trending Tv Shows
-            </h1>
+            <h1 className="textheader">Trending Tv Shows</h1>
             <TabSwitch onTabChange={handleTabChange} />
           </section>
           {!isFetching ? (
-            <main className="flex flex-row gap-5 overflow-x-scroll">
+            <main className="flex flex-row gap-5 ">
               {TvShows?.results?.map((Media) => (
                 <div key={Media.id}>
                   <MovieCard Media={Media} />
@@ -46,19 +44,19 @@ const TrendingTv = () => {
               ))}
             </main>
           ) : (
-            <div className="w-full h-60 gap-2 flex flex-wrap overflow-x-scroll  overflow-y-hidden">
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
-              {skeleton()}
+            <div className="w-full h-60 gap-2 flex flex-wrap  overflow-y-hidden">
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
+              {Skeleton()}
             </div>
           )}
         </div>
