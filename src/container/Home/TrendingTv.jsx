@@ -1,14 +1,13 @@
 import { useState } from "react";
 import ContentWrapper from "../../Hoc/SectionWrapper";
-import { useGetTrendingPeopleQuery } from "../../redux/TMDB";
+import { useGetTrendingTvQuery } from "../../redux/TMDB";
 import Error from "../../components/Error";
 import TabSwitch from "../../components/TabSwitch";
-import PeopleCard from "../../components/PeopleCard";
+import MovieCard from "../../components/MovieCard";
 
-
-const TrendingPeople = () => {
+const TrendingTv = () => {
   const [time, setTime] = useState("day");
-  const { data: people, isFetching, error } = useGetTrendingPeopleQuery(time);
+  const { data: TvShows, isFetching, error } = useGetTrendingTvQuery(time);
 
   const handleTabChange = (tab) => {
     setTime(tab);
@@ -16,9 +15,9 @@ const TrendingPeople = () => {
 
   const skeleton = () => {
     return (
-      <main className="w-36 sm:w-40 h-60 animate-pulse flex flex-col items-center justify-center gap-2">
-        <div className="w-full h-full bg-[#262728] rounded" />
-        <section className="w-full flex flex-col gap-2">
+      <main className="w-36 sm:w-40 h-60  animate-pulse flex flex-col items-center justify-center gap-2">
+        <div className="w-full h-full bg-skeleton rounded " />
+        <section className="w-full flex flex-col gap-2 ">
           <div className="w-full h-4 bg-skeleton rounded" />
           <div className="w-[80%] h-4 bg-skeleton rounded" />
         </section>
@@ -34,15 +33,15 @@ const TrendingPeople = () => {
         <div className="w-full h-full py-10 flex flex-col gap-10">
           <section className="w-full flex items-center gap-10">
             <h1 className="textheader">
-              Trending People
+              Trending Tv Shows
             </h1>
             <TabSwitch onTabChange={handleTabChange} />
           </section>
           {!isFetching ? (
             <main className="flex flex-row gap-5 overflow-x-scroll">
-              {people?.results?.map((person) => (
-                <div key={person.id}>
-                  <PeopleCard person={person} />
+              {TvShows?.results?.map((Media) => (
+                <div key={Media.id}>
+                  <MovieCard Media={Media} />
                 </div>
               ))}
             </main>
@@ -68,4 +67,4 @@ const TrendingPeople = () => {
   );
 };
 
-export default TrendingPeople;
+export default TrendingTv;

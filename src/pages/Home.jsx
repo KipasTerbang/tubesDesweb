@@ -1,7 +1,8 @@
 import SEO from "../components/SEO";
 import { Hero } from "../container";
 import TrendingMovie from "../container/Home/TrendingMovie";
-import TrendingPeople from "../container/Home/TrendingPeople";
+import TrendingTv from "../container/Home/TrendingTv";
+
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
       <section>
         <Hero />
         <TrendingMovie/>
-        <TrendingPeople/>
+        <TrendingTv/>
       </section>
     </>
   );
