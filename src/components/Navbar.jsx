@@ -43,7 +43,7 @@ const Navbar = () => {
           <section className="w-full flex items-center justify-start gap-10 sm:gap-14">
             <section className="font-bold text-2xl flex items-center gap-2">
               <BiMoviePlay className="bg-blue-100 p-[6px] rounded-full text-4xl" />
-              <Link to="/">Finding Movies</Link>
+              <Link to="/">Finding Movie</Link>
             </section>
             <ul className="hidden sm:flex items-center justify-center gap-5 sm:gap-10 font-semibold text-lg">
               <li
@@ -56,8 +56,8 @@ const Navbar = () => {
                     className="bg-white w-40 h-fit text-black font-normal flex flex-col items-start justify-start gap-2 absolute top-9 z-50 py-4 px-6 rounded"
                     onMouseLeave={() => setSelectedCategory(null)}
                   >
-                    <Link to="/movie/popular">Popular</Link>
-                    <Link to="/movie/upcoming">Upcoming</Link>
+                    <Link to="/">Popular</Link>
+                    <Link to="/">Upcoming</Link>
                   </ul>
                 )}
               </li>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     className="bg-white w-40 h-fit text-black font-normal flex flex-col items-start justify-start gap-2 absolute top-9 z-50 py-4 px-6 rounded"
                     onMouseLeave={() => setSelectedCategory(null)}
                   >
-                    <Link to="/tv/popular-tv">Popular</Link>
+                    <Link to="/">Popular</Link>
                   </ul>
                 )}
               </li>
@@ -105,8 +105,8 @@ const Navbar = () => {
                           className="bg-blue w-full h-fit text-white font-normal flex flex-col items-start justify-start gap-2 z-50"
                           onClick={() => setToggle(false)}
                         >
-                          <Link to="/movie/popular">Popular</Link>
-                          <Link to="/movie/upcoming">Upcoming</Link>
+                          <Link to="/">Popular</Link>
+                          <Link to="/">Upcoming</Link>
                         </ul>
                       )}
                     </li>
@@ -122,7 +122,7 @@ const Navbar = () => {
                           className="bg-blue w-full h-fit text-white font-normal flex flex-col items-start justify-start gap-2 z-50"
                           onClick={() => setToggle(false)}
                         >
-                          <Link to="/tv/popular-tv">Popular</Link>
+                          <Link to="/">Popular</Link>
                         </ul>
                       )}
                     </li>
