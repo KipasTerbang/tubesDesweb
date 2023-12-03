@@ -29,11 +29,15 @@ const Popular = () => {
   const onChange = (selectedOptions) => {
     setGenre(selectedOptions);
 
+    // Filter movies based on selected genres
     const selectedGenreIds = selectedOptions.map((option) => option.id);
 
+    // Check if any genre is selected
     if (selectedGenreIds.length === 0) {
+      // Show all movies when no genre is selected
       setAllMovies(movies?.results);
     } else {
+      // Filter movies when genres are selected
       const filteredMovies = movies?.results.filter((movie) =>
         movie.genre_ids.some((genreId) => selectedGenreIds.includes(genreId))
       );
@@ -41,13 +45,14 @@ const Popular = () => {
     }
   };
 
+  // Reset pageNum to 1 when genre is cleared
   useEffect(() => {
     if (!genre || genre.length === 0) {
       setPageNum(1);
     }
   }, [genre]);
 
-  const Skeleton = () => {
+  const skeleton = () => {
     return (
       <main className="w-40 h-60  animate-pulse flex flex-col items-center justify-center gap-2">
         <div className="w-full h-full bg-skeleton rounded " />
@@ -63,7 +68,7 @@ const Popular = () => {
 
   return (
     <>
-      <SEO title="Popular Movies - The Movie Database (TMDB)" />
+      <SEO title="Popular Movies - Finding Movies" />
       <div className="w-full h-full py-10">
         <ContentWrapper>
           <section className="w-full h-full flex items-center justify-end mb-10 px-10">
@@ -97,19 +102,19 @@ const Popular = () => {
               </div>
             ) : (
               <div className="w-full h-full flex flex-wrap justify-center overflow-x-hidden px-5 gap-5">
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
               </div>
             )}
           </InfiniteScroll>

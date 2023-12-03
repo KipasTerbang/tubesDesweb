@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { useNavigate } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import CircleRating from "./CircleRating";
@@ -21,9 +19,9 @@ const MovieCard = ({ Media }) => {
       smooth: true,
     });
     if (Media.media_type) {
-      navigate(`/movie/${Media.id}`);
+      navigate(`/${Media.media_type}/${Media.id}`);
     } else {
-      navigate(`/`);
+      navigate(`/${Media?.first_air_date ? "tv" : "movie"}/${Media.id}`);
     }
   };
 

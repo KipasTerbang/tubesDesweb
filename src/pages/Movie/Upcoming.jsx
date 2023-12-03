@@ -55,7 +55,7 @@ const Upcoming = () => {
     isWithinDateRange(movie.release_date)
   );
 
-  const Skeleton = () => {
+  const skeleton = () => {
     return (
       <main className="w-40 h-60  animate-pulse flex flex-col items-center justify-center gap-2">
         <div className="w-full h-full bg-skeleton rounded " />
@@ -71,7 +71,7 @@ const Upcoming = () => {
 
   return (
     <>
-      <SEO title="Upcoming Movies - The Movie Database (TMDB)" />
+      <SEO title="Upcoming Movies - Finding Movies" />
       <div className="w-full h-full py-10">
         <ContentWrapper>
           <section className="w-full h-full flex items-center justify-end mb-10 px-10">
@@ -105,19 +105,19 @@ const Upcoming = () => {
               </div>
             ) : (
               <div className="w-full h-full flex flex-wrap justify-center overflow-x-hidden px-5 gap-5">
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
-                {Skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
+                {skeleton()}
               </div>
             )}
           </InfiniteScroll>

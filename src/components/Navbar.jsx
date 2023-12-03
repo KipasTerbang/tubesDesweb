@@ -43,7 +43,7 @@ const Navbar = () => {
           <section className="w-full flex items-center justify-start gap-10 sm:gap-14">
             <section className="font-bold text-2xl flex items-center gap-2">
               <BiMoviePlay className="bg-blue-100 p-[6px] rounded-full text-4xl" />
-              <Link to="/">Finding Movies</Link>
+              <Link to="/">FindingMovies</Link>
             </section>
             <ul className="hidden sm:flex items-center justify-center gap-5 sm:gap-10 font-semibold text-lg">
               <li
@@ -56,8 +56,8 @@ const Navbar = () => {
                     className="bg-white w-40 h-fit text-black font-normal flex flex-col items-start justify-start gap-2 absolute top-9 z-50 py-4 px-6 rounded"
                     onMouseLeave={() => setSelectedCategory(null)}
                   >
-                    <Link to="/">Popular</Link>
-                    <Link to="/">Upcoming</Link>
+                    <Link to="/movie/popular">Popular</Link>
+                    <Link to="/movie/upcoming">Upcoming</Link>
                   </ul>
                 )}
               </li>
@@ -65,13 +65,13 @@ const Navbar = () => {
                 className="relative cursor-pointer"
                 onMouseOver={() => handleCategory("tv")}
               >
-                <span>TV</span>
+                <span>Tv</span>
                 {selectedCategory === "tv" && (
                   <ul
                     className="bg-white w-40 h-fit text-black font-normal flex flex-col items-start justify-start gap-2 absolute top-9 z-50 py-4 px-6 rounded"
                     onMouseLeave={() => setSelectedCategory(null)}
                   >
-                    <Link to="/">Popular</Link>
+                    <Link to="/tv/popular-tv">Popular</Link>
                   </ul>
                 )}
               </li>
@@ -105,8 +105,8 @@ const Navbar = () => {
                           className="bg-blue w-full h-fit text-white font-normal flex flex-col items-start justify-start gap-2 z-50"
                           onClick={() => setToggle(false)}
                         >
-                          <Link to="/">Popular</Link>
-                          <Link to="/">Upcoming</Link>
+                          <Link to="/movie/popular">Popular</Link>
+                          <Link to="/movie/upcoming">Upcoming</Link>
                         </ul>
                       )}
                     </li>
@@ -122,12 +122,12 @@ const Navbar = () => {
                           className="bg-blue w-full h-fit text-white font-normal flex flex-col items-start justify-start gap-2 z-50"
                           onClick={() => setToggle(false)}
                         >
-                          <Link to="/">Popular</Link>
+                          <Link to="/tv/popular-tv">Popular</Link>
                         </ul>
                       )}
                     </li>
                     <Link
-                      to="/"
+                      to="/favorite"
                       className="font-semibold text-lg cursor-pointer"
                     >
                       Favorite
@@ -139,13 +139,13 @@ const Navbar = () => {
           </section>
 
           <section className="hidden sm:flex items-center justify-center gap-5">
-            {/* <Link to="/">
+            <Link to="/favorite">
               <MdFavoriteBorder
                 className={`w-6 h-6 font-semibold cursor-pointer ${
-                  contents.length > 0 ? "text-red-500" : ""
+                  contents.length > 0 ? "text-blue-100" : ""
                 }`}
               />
-            </Link> */}
+            </Link>
             <div className="relative hidden md:block">
               {search ? (
                 <section className="flex items-center gap-2">

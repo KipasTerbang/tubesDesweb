@@ -1,12 +1,10 @@
-import SEO from "../components/SEO";
-import { Hero } from "../container";
-import TrendingMovie from "../container/Home/TrendingMovie";
-import TrendingTv from "../container/Home/TrendingTv";
+import { SEO } from "../components";
+import { Hero, TrendingMovie, TrendingTv } from "../container";
 
 const Home = () => {
   return (
     <>
-      <SEO title="Finding Movies" />
+      <SEO title="FindingMovies" />
       <section>
         <Hero />
         <TrendingMovie />

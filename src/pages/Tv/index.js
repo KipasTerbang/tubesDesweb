@@ -1,5 +1,3 @@
 import PopularTv from "./PopularTv";
 
-export {
-    PopularTv,
-}
+export { PopularTv };
