@@ -20,5 +20,5 @@ export {
   Reviews,
   Similar,
   Recommend,
-  KnownFor,
+  
 };
