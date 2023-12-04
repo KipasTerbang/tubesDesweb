@@ -7,9 +7,8 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 
 const categories = [
-  { name: "People", media_type: "person" },
   { name: "Movies", media_type: "movie" },
-  { name: "Tv Shows", media_type: "tv" },
+  { name: "Tv Shows", media_type: "tv" }
 ];
 
 const Search = () => {
